@@ -12,12 +12,31 @@ function Header(props) {
 
     }, [])
 
+    function scrollTop(){
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+    }
+
+    function scrollToAbout () {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }
+
+
     return (
         <div className='master-header-div'>
             <nav className='navbar'>
                 <ul className='nav-list'>
-                    <l1 className='nav-item'>Home</l1>
-                    <l1 className='nav-item'>About</l1>
+                    <l1 className='nav-item'
+                        onClick={() => scrollTop()}>Home</l1>
+                    <l1 className='nav-item'
+                        onClick={() => scrollToAbout()}>About</l1>
                     <l1 className='nav-item'>Portfolio</l1>
                     <l1 className='nav-item'>Contact</l1>
                 </ul>

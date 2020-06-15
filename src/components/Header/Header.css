@@ -61,9 +61,10 @@
 
 .mobile-nav-list {
     position: absolute;
+    border-top: 2px solid white;
     background-color: #022344;
     display: flex;
-    box-shadow: 3px 3px 3px #D0DDE3;
+    box-shadow: 3px 3px 3px #ABB6C4;
     flex-direction: column;
     /* justify-content: space-evenly; */
     height: 100vh;
