@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import "slick-carousel/slick/slick.css"
 // import "slick-carousel/slick/slick-theme.css"
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Slide from '@material-ui/core/Slide';
 import Slider from "react-slick";
+import { makeStyles } from '@material-ui/core/styles';
 import photo from '../../Photos/Headshot.png'
 import arrow from '../../Photos/icons8-right-arrow-50.png'
 import "./Landing.css";
@@ -11,7 +14,21 @@ const hero =
     "https://i.pinimg.com/originals/1e/3e/9e/1e3e9ebab9ae9154a33fefcf937d2796.jpg";
 
 function Landing(props) {
-    useEffect(() => { }, []);
+
+
+    useEffect(() => {
+
+    }, []);
+
+    const useStyles = makeStyles((theme) => ({
+        wrapper: {
+            width: 100 + theme.spacing(1),
+            speed: 500,
+            height: 150
+        }
+    }))
+
+    const classes = useStyles()
 
     return (
         <div className='landing-master-div'>
@@ -32,13 +49,23 @@ function Landing(props) {
                     <p>View my work</p>
                     <img className='arrow'
                         src={arrow}
-                        alt='arrow'/>
+                        alt='arrow' />
                 </div>
             </div>
 
-            <div>
-                <h1 className='about-h1'>ABOUT</h1>
+            <div className='about-div'>
+                <Slide direction="left" unmountOnExit  mountOnEnter in={true}>
+                    <h1 className='about-h1'>ABOUT</h1>
+                </Slide>
 
+            </div>
+
+            <div className='port-div'>
+                <div className={classes.wrapper}>
+                    <Slide direction="left" unmountOnExit  mountOnEnter in={true}>
+                        <h1>PROJECTS</h1>
+                    </Slide>
+                </div>
             </div>
 
         </div>

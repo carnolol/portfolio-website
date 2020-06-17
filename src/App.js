@@ -6,9 +6,12 @@ import Footer from './components/Footer/Footer'
 import './App.css';
 
 function App() {
+  console.log(document.body.scrollTop)
+  console.log(window.height)
+  // console.log(document.body.scrollHeight)
   return (
     <div className="App">
-      <Header/>
+      {document.body.scrollHeight >= 0 ? <Header/> : null}
       <Landing/>
       <Skills/>
       <Footer/>

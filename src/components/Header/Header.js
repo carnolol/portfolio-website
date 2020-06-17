@@ -18,16 +18,35 @@ function Header(props) {
             left: 0,
             behavior: 'smooth'
           });
+          setOpen(false)
     }
 
     function scrollToAbout () {
         window.scrollTo({
-            top: 0,
+            top: 600,
             left: 0,
             behavior: 'smooth'
         })
+        setOpen(false)
     }
 
+    function scrollToPortfolio () {
+        window.scrollTo({
+            top: 600,
+            left: 0,
+            behavior: 'smooth'
+        })
+        setOpen(false)
+    }
+
+    function scrollToContact () {
+        window.scrollTo({
+            top: 600,
+            left: 0,
+            behavior: 'smooth'
+        })
+        setOpen(false)
+    }
 
     return (
         <div className='master-header-div'>
@@ -45,8 +64,10 @@ function Header(props) {
                     onClick={() => setOpen(!open)}
                     alt='hamburger menu' />
                 <ul className={`mobile-nav-list ${open ? `mobile-nav-list-open` : null}`}>
-                    <l1 className='nav-item2'>Home</l1>
-                    <l1 className='nav-item2'>About</l1>
+                <l1 className='nav-item2'
+                        onClick={() => scrollTop()}>Home</l1>
+                    <l1 className='nav-item2'
+                        onClick={() => scrollToAbout()}>About</l1>
                     <l1 className='nav-item2'>Portfolio</l1>
                     <l1 className='nav-item2'>Contact</l1>
                 </ul>

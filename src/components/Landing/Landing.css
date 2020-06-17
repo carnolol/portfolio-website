@@ -101,3 +101,12 @@
     color: #869DAC;
     border-bottom: 4px solid #869DAC;
 }
+
+.about-div{
+    background-color: #F3F6F7;
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
