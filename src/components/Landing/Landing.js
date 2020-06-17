@@ -20,6 +20,16 @@ function Landing(props) {
 
     }, []);
 
+
+    function scrollToAbout () {
+        window.scrollTo({
+            top: 600,
+            left: 0,
+            behavior: 'smooth'
+        })
+        // setOpen(false)
+    }
+
     const useStyles = makeStyles((theme) => ({
         wrapper: {
             width: 100 + theme.spacing(1),
@@ -45,7 +55,8 @@ function Landing(props) {
                 <img className='profile-pic'
                     src={photo}
                     alt='me.jpg' />
-                <div className='my-work'>
+                <div className='my-work'
+                    onClick={() => scrollToAbout()}>
                     <p>View my work</p>
                     <img className='arrow'
                         src={arrow}
