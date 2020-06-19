@@ -16,24 +16,40 @@ const hero =
 
 function Landing(props) {
     const [slideLeft, setSlideLeft] = useState(false)
+    const [slideUp, setSlideUp] = useState(false)
     const [skills, setSkills] = useState([])
+    const [backend, setBackend] = useState([])
+    const [other, setOther] = useState([])
 
 
 
     useEffect(() => {
-        window.addEventListener('scroll', handleSlide)
+        window.addEventListener('scroll', handleSlideLeft)
+        window.addEventListener('scroll', handleSlideUp)
         axios
             .get('/skills')
             .then(res => {
                 setSkills(res.data)
+                axios.get('/backend')
+                    .then(res => {
+                        setBackend(res.data)
+                    })
             })
     }, []);
 
-    function handleSlide() {
+    function handleSlideLeft() {
         if (window.scrollY > 400) {
             setSlideLeft(true)
         } else {
             setSlideLeft(false)
+        }
+    }
+
+    function handleSlideUp() {
+        if (window.scrollY > 520) {
+            setSlideUp(true)
+        } else {
+            setSlideUp(false)
         }
     }
 
@@ -64,11 +80,23 @@ function Landing(props) {
 
         return (
             <div className='skill-container'>
-                <h1>{skill.name}</h1>
-                <img className='skill'
+                <img className='skill-img'
                     alt='myskills'
-                    src={skill.img}/>
+                    src={skill.img} />
+                <h1>{skill.name}</h1>
             </div>
+        )
+    })
+
+    const myBackend = backend.map(skill => {
+
+        return (
+            <div className='skill-container'>
+            <img className='skill-img'
+                alt='myskills'
+                src={skill.img} />
+            <h1>{skill.name}</h1>
+        </div>
         )
     })
 
@@ -97,12 +125,20 @@ function Landing(props) {
             </div>
 
             <div className='about-div'>
-                <Slide direction="left" unmountOnExit mountOnEnter in={slideLeft} timeout={800}>
-                    <h1 className='about-h1'>ABOUT</h1>
-                    {/* {mySkills} */}
+                <Slide direction="left" unmountOnExit mountOnEnter in={slideLeft} timeout={900}>
+                    <h1 className='about-h1'>SKILLS</h1>
                 </Slide>
-                <Slide direction="up" unmountOnExit mountOnEnter in={slideLeft} timeout={800}>
-                    {mySkills}
+                <Slide direction="right" unmountOnExit mountOnEnter in={slideUp} timeout={1100}>
+                    <div className='master-skill-container'>
+                        <p className='skill-title'>Front End</p>
+                        {mySkills}
+                    </div>
+                </Slide>
+                <Slide unmountOnExit mountOnEnter direction="right" in={slideUp} timeout={1100}>
+                    <div className='master-skill-container'>
+                        <p className='skill-title'>Backend</p>
+                        {myBackend}
+                    </div>
                 </Slide>
             </div>
 
