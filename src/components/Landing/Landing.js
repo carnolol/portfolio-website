@@ -5,7 +5,7 @@ import axios from "axios";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Slide from '@material-ui/core/Slide';
 import Slider from "react-slick";
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import photo from '../../Photos/Headshot.png'
 import arrow from '../../Photos/icons8-right-arrow-50.png'
@@ -21,23 +21,23 @@ function Landing(props) {
 
 
     useEffect(() => {
-        window.addEventListener('scroll' , handleSlide)
+        window.addEventListener('scroll', handleSlide)
         axios
             .get('/skills')
-            .then( res => {
+            .then(res => {
                 setSkills(res.data)
             })
     }, []);
 
-    function handleSlide (){
-        if(window.scrollY > 400){
+    function handleSlide() {
+        if (window.scrollY > 400) {
             setSlideLeft(true)
         } else {
             setSlideLeft(false)
         }
     }
 
-    function scrollToAbout () {
+    function scrollToAbout() {
         window.scrollTo({
             top: 600,
             left: 0,
@@ -55,6 +55,22 @@ function Landing(props) {
     }))
 
     const classes = useStyles()
+
+
+    //!!!!!!        MAP HERE        !!!!!
+
+    const mySkills = skills.map(skill => {
+
+
+        return (
+            <div className='skill-container'>
+                <h1>{skill.name}</h1>
+                <img className='skill'
+                    alt='myskills'
+                    src={skill.img}/>
+            </div>
+        )
+    })
 
     return (
         <div className='landing-master-div'>
@@ -81,20 +97,22 @@ function Landing(props) {
             </div>
 
             <div className='about-div'>
-                <Slide direction="left" unmountOnExit  mountOnEnter in={slideLeft} timeout={800}>
+                <Slide direction="left" unmountOnExit mountOnEnter in={slideLeft} timeout={800}>
                     <h1 className='about-h1'>ABOUT</h1>
+                    {/* {mySkills} */}
                 </Slide>
-
+                <Slide direction="up" unmountOnExit mountOnEnter in={slideLeft} timeout={800}>
+                    {mySkills}
+                </Slide>
             </div>
 
             <div className='port-div'>
                 <div className={classes.wrapper}>
-                    <Slide direction="left" unmountOnExit  mountOnEnter in={true}>
+                    <Slide direction="left" unmountOnExit mountOnEnter in={true}>
                         <h1>PROJECTS</h1>
                     </Slide>
                 </div>
             </div>
-
         </div>
     );
 }

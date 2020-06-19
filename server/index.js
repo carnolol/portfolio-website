@@ -1,4 +1,5 @@
 require("dotenv").config()
+const massive = require ("massive")
 const express = require("express")
 const session = require('express-session')
 const skillsCtrl = require('./skillsController')
@@ -19,3 +20,14 @@ app.use(
 
 //* Skills Endpoints
 app.get('/skills', skillsCtrl.getSkills)
+
+massive({
+    connectionString: CONNECTION_STRING,
+    ssl: {
+        rejectUnauthorized: false
+    }
+}).then(dbInstance => {
+    app.set("db", dbInstance)
+    console.log('DB IS CONNECTED')
+    app.listen(SERVER_PORT, () =>  console.log(`DOCKED AT PORT ${SERVER_PORT}`))
+})
