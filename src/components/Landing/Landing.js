@@ -5,6 +5,7 @@ import axios from "axios";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Slide from '@material-ui/core/Slide';
 import Slider from "react-slick";
+import {withRouter} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import photo from '../../Photos/Headshot.png'
 import arrow from '../../Photos/icons8-right-arrow-50.png'
@@ -14,12 +15,27 @@ const hero =
     "https://i.pinimg.com/originals/1e/3e/9e/1e3e9ebab9ae9154a33fefcf937d2796.jpg";
 
 function Landing(props) {
+    const [slideLeft, setSlideLeft] = useState(false)
+    const [skills, setSkills] = useState([])
+
 
 
     useEffect(() => {
-
+        window.addEventListener('scroll' , handleSlide)
+        axios
+            .get('/skills')
+            .then( res => {
+                setSkills(res.data)
+            })
     }, []);
 
+    function handleSlide (){
+        if(window.scrollY > 400){
+            setSlideLeft(true)
+        } else {
+            setSlideLeft(false)
+        }
+    }
 
     function scrollToAbout () {
         window.scrollTo({
@@ -65,7 +81,7 @@ function Landing(props) {
             </div>
 
             <div className='about-div'>
-                <Slide direction="left" unmountOnExit  mountOnEnter in={true}>
+                <Slide direction="left" unmountOnExit  mountOnEnter in={slideLeft} timeout={800}>
                     <h1 className='about-h1'>ABOUT</h1>
                 </Slide>
 
@@ -83,4 +99,4 @@ function Landing(props) {
     );
 }
 
-export default Landing;
+export default withRouter(Landing);
