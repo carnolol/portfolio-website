@@ -33,6 +33,11 @@ function Landing(props) {
                 axios.get('/backend')
                     .then(res => {
                         setBackend(res.data)
+                        axios
+                            .get('/other')
+                            .then(res => {
+                                setOther(res.data)
+                            })
                     })
             })
     }, []);
@@ -92,11 +97,22 @@ function Landing(props) {
 
         return (
             <div className='skill-container'>
-            <img className='skill-img'
-                alt='myskills'
-                src={skill.img} />
-            <h1>{skill.name}</h1>
-        </div>
+                <img className='skill-img'
+                    alt='myskills'
+                    src={skill.img} />
+                <h1>{skill.name}</h1>
+            </div>
+        )
+    })
+
+    const otherSkills = other.map(skill => {
+        return(
+            <div className='skill-container'>
+                <img className='skill-img'
+                    alt='myskills'
+                    src={skill.img} />
+                <h1>{skill.name}</h1>
+            </div>
         )
     })
 
@@ -125,19 +141,25 @@ function Landing(props) {
             </div>
 
             <div className='about-div'>
-                <Slide direction="left" unmountOnExit mountOnEnter in={slideLeft} timeout={900}>
+                <Slide direction="left" unmountOnExit mountOnEnter in={slideLeft} timeout={1000}>
                     <h1 className='about-h1'>SKILLS</h1>
                 </Slide>
-                <Slide direction="right" unmountOnExit mountOnEnter in={slideUp} timeout={1100}>
+                <Slide direction="right" unmountOnExit mountOnEnter in={slideUp} timeout={1200}>
                     <div className='master-skill-container'>
                         <p className='skill-title'>Front End</p>
                         {mySkills}
                     </div>
                 </Slide>
-                <Slide unmountOnExit mountOnEnter direction="right" in={slideUp} timeout={1100}>
+                <Slide unmountOnExit mountOnEnter direction="right" in={slideUp} timeout={1200}>
                     <div className='master-skill-container'>
                         <p className='skill-title'>Backend</p>
                         {myBackend}
+                    </div>
+                </Slide>
+                <Slide unmountOnExit mountOnEnter direction="right" in={slideUp} timeout={1200}>
+                    <div className='master-skill-container'>
+                        <p className='skill-title'>Other</p>
+                        {otherSkills}
                     </div>
                 </Slide>
             </div>

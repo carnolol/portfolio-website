@@ -10,3 +10,9 @@ id serial primary key,
 name varchar(200),
 img text
 )
+
+create table my_other_skills(
+id serial primary key, 
+name varchar(200), 
+img text
+)

@@ -21,6 +21,7 @@ app.use(
 //* Skills Endpoints
 app.get('/skills', skillsCtrl.getSkills)
 app.get('/backend', skillsCtrl.getBackendSkills)
+app.get('/other', skillsCtrl.getOtherSkills)
 
 massive({
     connectionString: CONNECTION_STRING,
