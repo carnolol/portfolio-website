@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import "slick-carousel/slick/slick.css"
 // import "slick-carousel/slick/slick-theme.css"
+// import Slider from "react-slick";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Slide from '@material-ui/core/Slide';
-import Slider from "react-slick";
 import { withRouter } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import photo from '../../Photos/Headshot.png'
@@ -43,7 +43,7 @@ function Landing(props) {
     }, []);
 
     function handleSlideLeft() {
-        if (window.scrollY > 400) {
+        if (window.scrollY > 360) {
             setSlideLeft(true)
         } else {
             setSlideLeft(false)
@@ -51,7 +51,7 @@ function Landing(props) {
     }
 
     function handleSlideUp() {
-        if (window.scrollY > 520) {
+        if (window.scrollY > 500) {
             setSlideUp(true)
         } else {
             setSlideUp(false)
@@ -150,7 +150,7 @@ function Landing(props) {
                         {mySkills}
                     </div>
                 </Slide>
-                <Slide unmountOnExit mountOnEnter direction="right" in={slideUp} timeout={1200}>
+                <Slide unmountOnExit mountOnEnter direction="left" in={slideUp} timeout={1200}>
                     <div className='master-skill-container'>
                         <p className='skill-title'>Backend</p>
                         {myBackend}
@@ -164,13 +164,6 @@ function Landing(props) {
                 </Slide>
             </div>
 
-            <div className='port-div'>
-                <div className={classes.wrapper}>
-                    <Slide direction="left" unmountOnExit mountOnEnter in={true}>
-                        <h1>PROJECTS</h1>
-                    </Slide>
-                </div>
-            </div>
         </div>
     );
 }
