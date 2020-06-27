@@ -1,0 +1,29 @@
+.master-about-div{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    flex-direction: column;
+    min-height: 200vh;
+}
+
+.about-goals-container{
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.about-goals{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-goals > h1{
+    background-color: yellowgreen;
+    font-size: 300%;
+    width: 150px;
+    height: 150px;
+    /* border-radius: 50%; */
+}

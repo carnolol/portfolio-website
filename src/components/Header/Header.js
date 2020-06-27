@@ -30,6 +30,15 @@ function Header(props) {
         setOpen(false)
     }
 
+    function scrollToAbout () {
+        window.scrollTo({
+            top: 1550,
+            left: 0,
+            behavior: 'smooth'
+        })
+        setOpen(false)
+    }
+
     function scrollToPortfolio () {
         window.scrollTo({
             top: 600,
@@ -56,7 +65,8 @@ function Header(props) {
                         onClick={() => scrollTop()}>Home</l1>
                     <l1 className='nav-item'
                         onClick={() => scrollToSkills()}>Skills</l1>
-                    <li className='nav-item'>About</li>
+                    <li className='nav-item'
+                        onClick={() => scrollToAbout()}>About</li>
                     <l1 className='nav-item'>Portfolio</l1>
                     <l1 className='nav-item'>Contact</l1>
                 </ul>
@@ -69,7 +79,8 @@ function Header(props) {
                         onClick={() => scrollTop()}>Home</l1>
                     <l1 className='nav-item2'
                         onClick={() => scrollToSkills()}>Skills</l1>
-                    <li className='nav-item2'>About</li>
+                    <li className='nav-item2'
+                        onClick={() => scrollToAbout()}>About</li>
                     <l1 className='nav-item2'>Portfolio</l1>
                     <l1 className='nav-item2'>Contact</l1>
                 </ul>

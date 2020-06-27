@@ -86,7 +86,7 @@ function Landing(props) {
         return (
             <div className='skill-container'>
                 <img className='skill-img'
-                    alt='myskills'
+                    alt={`${skill.name} picture`}
                     src={skill.img} />
                 <h1>{skill.name}</h1>
             </div>
@@ -98,7 +98,7 @@ function Landing(props) {
         return (
             <div className='skill-container'>
                 <img className='skill-img'
-                    alt='myskills'
+                    alt={`${skill.name} picture`}
                     src={skill.img} />
                 <h1>{skill.name}</h1>
             </div>
@@ -109,7 +109,7 @@ function Landing(props) {
         return(
             <div className='skill-container'>
                 <img className='skill-img'
-                    alt='myskills'
+                    alt={`${skill.name} picture`}
                     src={skill.img} />
                 <h1>{skill.name}</h1>
             </div>

@@ -1,6 +1,7 @@
 .landing-master-div{
     padding-top: 35px;
-    min-height: 300vh;
+    /* min-height: 300vh; */
+    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,12 +99,13 @@
 .about-h1{
     margin-top: 50px;
     font-size: 240%;
-    color: #869DAC;
-    border-bottom: 4px solid #869DAC;
+    color: #45474a;
+    border-bottom: 4px solid #45474a;
 }
 
 .about-div{
-    background-color: #F3F6F7;
+    background-color: #E9ECEF;
+    padding-bottom: 60px;
     width: 100vw;
     height: 950px;
     display: flex;
