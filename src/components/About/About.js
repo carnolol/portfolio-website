@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import design from '../icons/icons8-web-design-64.png'
 import { Grow } from '@material-ui/core'
 import './About.css'
 
@@ -25,18 +26,32 @@ function About(props) {
             <h1>djsdkf</h1>
             <Grow in={grow} timeout={1500}>
                 <div className='about-goals-container'>
+
                     <div className='about-goals'>
-                        <h1>1</h1>
+                        <img className='goal-img' 
+                            src={design}
+                            alt='design icon'/>
+                        <h3 className='goal-logo'>Design Focused</h3>
+                        <p>I take pride in making sure everything looks perfect.</p>
                     </div>
+
+                    <div className='about-goals'>
+                        <img className='goal-img'
+                            src=''
+                            alt=''/>
+                        <h3 className='goal-logo'></h3>
+                        <p className='goal-text'></p>
+                    </div>
+
                     <div className='about-goals'>
                         2
                     </div>
-                    <div className='about-goals'>
-                        2
-                    </div>
+
                     <div className='about-goals'>
                         4
                     </div>
+
+
                 </div>
             </Grow>
         </div>
