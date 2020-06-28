@@ -23,7 +23,6 @@ function About(props) {
     return (
         <div className='master-about-div'>
             <h1 className='about-h1'>About</h1>
-            <h1>djsdkf</h1>
             <Grow in={grow} timeout={1500}>
                 <div className='about-goals-container'>
 
