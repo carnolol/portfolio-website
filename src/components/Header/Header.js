@@ -25,6 +25,8 @@ function Header(props) {
         }
     }
 
+    console.log(window.screen)
+
     function checkSkills() {
         if (window.scrollY > 600 && window.scrollY < 1550) {
             setSkills(true)

@@ -7,6 +7,7 @@
 }
 
 .about-goals-container{
+    padding-top: 40px;
     width: 90vw;
     display: flex;
     align-items: center;
