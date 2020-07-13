@@ -45,18 +45,32 @@
 
 .dad-container{
     display: flex;
+    justify-content: space-between;
+    width: 90%;
 }
 
 .dad-info{
     border: 3px solid cornflowerblue;
     display: flex;
+    width: 300px;
+    height: 500px;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+}
+
+.dad-info > p {
+    width: 230px;
 }
 
 .dad-and-row{
     width: 275px;
     height: 275px;
     border-radius: 50%;
+}
+
+.place{
+    height: 500px;
+    width: 500px;
+    background-color: crimson;
 }

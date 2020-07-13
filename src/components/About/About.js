@@ -88,6 +88,11 @@ function About(props) {
                         src={dad}
                         alt='dad and rowan' />
                     <h1>Who am I?</h1>
+                    <p>A father, Someone who has a great passion for building and designing projects from the ground up. Passionate about obsessing over the small details.</p>
+                </div>
+
+                <div className='place'>
+
                 </div>
 
             </div>
