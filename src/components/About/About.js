@@ -27,8 +27,9 @@ function About(props) {
 
     return (
         <div className='master-about-div'>
+            
             <h1 className='about-h1'>About</h1>
-            {/* <Grow in={grow} timeout={1500}> */}
+
             <div className='about-goals-container'>
 
                 <Grow in={grow} timeout={1000}>
@@ -88,7 +89,20 @@ function About(props) {
                         src={dad}
                         alt='dad and rowan' />
                     <h1>Who am I?</h1>
-                    <p>A father, Someone who has a great passion for building and designing projects from the ground up. Passionate about obsessing over the small details.</p>
+                    <ul className='list-container'>
+                        <li className='dad-list'>
+                            A Father & loyal family-man
+                        </li>
+                        <li className='dad-list'>
+                            A level headed well versed problem solver
+                        </li>
+                        <li className='dad-list'>
+                            Someone who has great passion for building and designing
+                        </li>
+                        <li className='dad-list'>
+                            Passionate about obsessing over the small details
+                        </li>
+                    </ul>
                 </div>
 
                 <div className='place'>
@@ -96,7 +110,6 @@ function About(props) {
                 </div>
 
             </div>
-            {/* </Grow> */}
         </div>
     )
 }
