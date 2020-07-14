@@ -10,11 +10,13 @@ function Header(props) {
     const [home, setHome] = useState(true)
     const [skills, setSkills] = useState(false)
     const [about, setAbout] = useState(false)
+    const [projects, setProjects] = useState(false)
 
     useEffect(() => {
         window.addEventListener('scroll', checkSkills)
         window.addEventListener('scroll', checkHome)
         window.addEventListener('scroll', checkAbout)
+        // window.addEventListener('scroll', checkProjects)
     }, [])
 
     function checkHome() {
@@ -36,12 +38,24 @@ function Header(props) {
     }
 
     function checkAbout() {
-        if (window.scrollY >= 1550) {
+        if (window.scrollY >= 1550 && window.scrollY < 2750) {
             setAbout(true)
         } else {
             setAbout(false)
+        } if(window.scrollY >= 2750) {
+            setProjects(true)
+        } else {
+            setProjects(false)
         }
     }
+
+    // function checkProjects() {
+    //     if(window.scrollY >= 2750) {
+    //         setProjects(true)
+    //     } else {
+    //         setProjects(false)
+    //     }
+    // }
 
     function scrollTop() {
         window.scrollTo({
@@ -70,9 +84,9 @@ function Header(props) {
         setOpen(false)
     }
 
-    function scrollToPortfolio() {
+    function scrollToProjects() {
         window.scrollTo({
-            top: 600,
+            top: 2750,
             left: 0,
             behavior: 'smooth'
         })
@@ -101,7 +115,8 @@ function Header(props) {
                     <li 
                         className={`nav-item ${about ? 'current-skill' : null}`}
                         onClick={() => scrollToAbout()}>About</li>
-                    <l1 className='nav-item'>Portfolio</l1>
+                    <l1 className={`nav-item ${projects ? 'current-skill' : null}`}
+                        onClick={() => scrollToProjects()}>Projects</l1>
                     <l1 className='nav-item'>Contact</l1>
                 </ul>
                 <img className='hamburger'
@@ -115,7 +130,8 @@ function Header(props) {
                         onClick={() => scrollToSkills()}>Skills</l1>
                     <li className='nav-item2'
                         onClick={() => scrollToAbout()}>About</li>
-                    <l1 className='nav-item2'>Portfolio</l1>
+                    <l1 className='nav-item2'
+                        onClick={() => scrollToProjects()}>Projects</l1>
                     <l1 className='nav-item2'>Contact</l1>
                 </ul>
             </nav>

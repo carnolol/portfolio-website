@@ -1,4 +1,4 @@
-.master-about-div{
+.master-about-div {
     display: flex;
     background-color: white;
     align-items: center;
@@ -6,7 +6,7 @@
     min-height: 200vh;
 }
 
-.about-goals-container{
+.about-goals-container {
     padding-top: 40px;
     width: 90vw;
     display: flex;
@@ -23,12 +23,12 @@
     align-items: center;
 }
 
-.goal-img{
-   height: 50px;
-   width: 50px;
+.goal-img {
+    height: 50px;
+    width: 50px;
 }
 
-.about-goals{
+.about-goals {
     background-color: aquamarine;
     display: flex;
     flex-direction: column;
@@ -39,17 +39,18 @@
     height: 250px;
 }
 
-.goal-text{
+.goal-text {
     width: 85%;
 }
 
-.dad-container{
+.dad-container {
     display: flex;
     justify-content: space-between;
     width: 90%;
+    border: 13px solid rebeccapurple;
 }
 
-.dad-info{
+.dad-info {
     border: 3px solid cornflowerblue;
     display: flex;
     width: 300px;
@@ -59,17 +60,17 @@
     flex-direction: column;
 }
 
-.dad-info > p {
+.dad-info>p {
     width: 230px;
 }
 
-.dad-and-row{
+.dad-and-row {
     width: 275px;
     height: 275px;
     border-radius: 50%;
 }
 
-.place{
+.place {
     height: 500px;
     width: 500px;
     background-color: crimson;
