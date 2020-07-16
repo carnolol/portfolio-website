@@ -27,7 +27,7 @@ function About(props) {
 
     return (
         <div className='master-about-div'>
-            
+
             <h1 className='about-h1'>About</h1>
 
             <div className='about-goals-container'>
@@ -64,7 +64,7 @@ function About(props) {
                                 alt='water icon' />
                         </div>
                         <h3 className='goal-logo'>Fluid</h3>
-                        <p className='goal-text'>Easy to navigate layouts.</p>
+                        <p className='goal-text'>Designing & building easy to navigate layouts.</p>
                     </div>
                 </Grow>
 
@@ -91,7 +91,7 @@ function About(props) {
                     <h1>Who am I?</h1>
                     <ul className='list-container'>
                         <li className='dad-list'>
-                            A Father & loyal family-man
+                             Father & loyal family-man
                         </li>
                         <li className='dad-list'>
                             A level headed well versed problem solver
@@ -100,7 +100,7 @@ function About(props) {
                             Someone who has great passion for building and designing
                         </li>
                         <li className='dad-list'>
-                            Passionate about obsessing over the small details
+                            Obsessed with perfecting the small details
                         </li>
                     </ul>
                 </div>
