@@ -91,10 +91,54 @@
 .dad-list{
     list-style: disc;
     padding-bottom: 10px;
+    font-size: 80%;
 }
 
 .place {
     height: 500px;
     width: 500px;
-    background-color: crimson;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #0d5470;
+}
+
+.work-together-inputs-container{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    justify-content: space-between;
+}
+
+.work-together-inputs{
+    border: none;
+    color: white;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+}
+
+.work-together-inputs::placeholder{
+    color: white;
+    font-size: 120%;
+}
+
+.work-buttons-container{
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 15px; */
+}
+
+.work-buttons{
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 5px;
+
+}
+
+.work-buttons:hover{
+    border: 2px solid #04c2c9;
+    background-color: #04c2c9;
+    transition: all .35s ease-in-out;
 }

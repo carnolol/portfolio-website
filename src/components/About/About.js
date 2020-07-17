@@ -6,15 +6,21 @@ import dad from '../../Photos/dad_and_rowan.jpg'
 import cool from '../icons/icons8-cool-50.png'
 import fluid from '../icons/icons8-water-64.png'
 import { Grow } from '@material-ui/core'
+import TextField from '@material-ui/core/TextField'
 import './About.css'
 
 function About(props) {
 
     const [grow, setGrow] = useState(false)
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+
+    // TODO: set up backend to work with nodemailer so we can receive emails from people who would like to contact us. 
 
     useEffect(() => {
         window.addEventListener('scroll', handleGrow)
-    }, [])
+    }, [name])
 
     function handleGrow() {
         console.log(window.scrollY)
@@ -23,6 +29,12 @@ function About(props) {
         } else {
             setGrow(false)
         }
+    }
+
+    function handleReset(){
+        setName('')
+        setEmail('')
+        setMessage('')
     }
 
     return (
@@ -91,7 +103,7 @@ function About(props) {
                     <h1>Who am I?</h1>
                     <ul className='list-container'>
                         <li className='dad-list'>
-                             Father & loyal family-man
+                            Father & loyal family-man
                         </li>
                         <li className='dad-list'>
                             A level headed well versed problem solver
@@ -106,6 +118,30 @@ function About(props) {
                 </div>
 
                 <div className='place'>
+
+                    <div>
+                        <h1>Lets Work Together!</h1>
+                        <p>Send me an email with some details!</p>
+                    </div>
+
+                    <div className='work-together-inputs-container'>
+                        <input className='work-together-inputs'
+                            placeholder='Name'
+                            onChange={(e) => setName(e.target.value)} />
+                        <input className='work-together-inputs'
+                            placeholder='Email'
+                            onChange={e => setGrow(e.target.value)} />
+                        <input className='work-together-inputs'
+                            placeholder='Your Message'
+                            onChange={e => setMessage(e.target.value)} />
+                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+ 
+                        <div className='work-buttons-container'>
+                            <button className='work-buttons'
+                                onClick={() => handleReset()}>Cancel</button>
+                            <button className='work-buttons'>Submit</button>
+                        </div>
+                    </div>
 
                 </div>
 
