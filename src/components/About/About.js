@@ -7,13 +7,16 @@ import cool from '../icons/icons8-cool-50.png'
 import fluid from '../icons/icons8-water-64.png'
 import { Grow } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
+import cyan from '@material-ui/core/colors/cyan'
+import { ThemeProvider } from '@material-ui/styles';
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles'
 import './About.css'
 
 function About(props) {
 
     const [grow, setGrow] = useState(false)
+    const [aboutGrow, setAboutGrow] = useState(false)
     const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
 
     // TODO: set up backend to work with nodemailer so we can receive emails from people who would like to contact us. 
@@ -22,25 +25,48 @@ function About(props) {
         window.addEventListener('scroll', handleGrow)
     }, [name])
 
+    const theme = createMuiTheme({
+        color: "white",
+        palette:{
+            primary: {
+                main: cyan[500]
+            }, 
+        }
+    })
+
+    const inputProps = {
+        color: 'white'
+    }
+
+    // const styles = theme => ({
+    //     input: {
+    //         color: 'white'
+    //     }
+    // });
+
     function handleGrow() {
         console.log(window.scrollY)
-        if (window.scrollY > 1400) {
+        if (window.scrollY > 1250) {
             setGrow(true)
+        } if (window.scrollY > 1050){
+            setAboutGrow(true)
         } else {
-            setGrow(false)
+            setGrow(false) 
+            setAboutGrow(false)
         }
     }
 
     function handleReset(){
         setName('')
-        setEmail('')
         setMessage('')
     }
 
     return (
         <div className='master-about-div'>
 
-            <h1 className='about-h1'>About</h1>
+            <Grow timeout={1000} in={aboutGrow}>
+                <h1 className='about-h1'>About</h1>
+            </Grow>
 
             <div className='about-goals-container'>
 
@@ -129,12 +155,27 @@ function About(props) {
                             placeholder='Name'
                             onChange={(e) => setName(e.target.value)} />
                         <input className='work-together-inputs'
-                            placeholder='Email'
-                            onChange={e => setGrow(e.target.value)} />
-                        <input className='work-together-inputs'
                             placeholder='Your Message'
                             onChange={e => setMessage(e.target.value)} />
-                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+                        <ThemeProvider theme={theme}>
+                            <TextField 
+                                id="outlined-basic" 
+                                label="Name" 
+                                variant="outlined" 
+                                color="primary" 
+                                size="small"
+                                inputProps={inputProps}
+                                required={true}
+                                onChange={e => setName(e.target.value)}/>
+                        </ThemeProvider>
+                        <ThemeProvider>
+                            <TextField
+                             label="Message"
+                             variant="outlined"
+                             size="small"
+                             required="true"
+                             onChange={e => setMessage(e.target.value)}   />
+                        </ThemeProvider>
  
                         <div className='work-buttons-container'>
                             <button className='work-buttons'
