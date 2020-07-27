@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import design from '../icons/icons8-web-design-50.png'
 import phone from '../icons/icons8-augmented-reality-64.png'
-// import speed from '../icons/icons8-speed-100.png'
 import dad from '../../Photos/dad_and_rowan.jpg'
 import cool from '../icons/icons8-cool-50.png'
 import fluid from '../icons/icons8-water-64.png'
@@ -54,6 +54,16 @@ function About(props) {
             setGrow(false) 
             setAboutGrow(false)
         }
+    }
+
+    const handleSendEmail = () => {
+        const body = {
+            name: name,
+            message: message
+        }
+        axios.post('/email', body).then(res => {
+            console.log(res.data)
+        })
     }
 
     function handleReset(){
@@ -164,6 +174,7 @@ function About(props) {
                                 variant="outlined" 
                                 color="primary" 
                                 size="small"
+                                value={name}
                                 inputProps={inputProps}
                                 required={true}
                                 onChange={e => setName(e.target.value)}/>
@@ -174,13 +185,16 @@ function About(props) {
                              variant="outlined"
                              size="small"
                              required="true"
+                             rows="20"
+                             value={message}
                              onChange={e => setMessage(e.target.value)}   />
                         </ThemeProvider>
  
                         <div className='work-buttons-container'>
                             <button className='work-buttons'
                                 onClick={() => handleReset()}>Cancel</button>
-                            <button className='work-buttons'>Submit</button>
+                            <button className='work-buttons'
+                                onClick={() => handleSendEmail()}>Submit</button>
                         </div>
                     </div>
 
