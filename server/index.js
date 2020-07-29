@@ -5,7 +5,6 @@ const session = require('express-session')
 const path = require('path')
 const skillsCtrl = require('./skillsController')
 const mailCtrl = require('./mailController')
-const { mail } = require("./mailController")
 const app = express()
 app.use(express.json())
 

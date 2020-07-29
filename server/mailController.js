@@ -8,11 +8,12 @@ let transporter = nodemailer.createTransport({
         pass: process.env.PASSWORD
     }
 })
+
 module.exports = {
     mail: async (req, res) => {
         const {name, message} = req.body
         console.log('NAME:', name)
-        console.log('MESSAGE', message)
+        console.log('MESSAGE:', message)
         let mailOptions = {
             from: 'follow.your.dota.pros@gmail.com',
             to: 'michael.chadwick91@gmail.com',
@@ -22,7 +23,7 @@ module.exports = {
 
         transporter.sendMail(mailOptions, function(err, data) {
             if(err){
-                console.log('error with Nodemailer')
+                console.log(err)
             } else {
                 console.log('Email Sent!')
             }

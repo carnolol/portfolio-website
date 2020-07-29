@@ -25,6 +25,8 @@ function About(props) {
         window.addEventListener('scroll', handleGrow)
     }, [name])
 
+
+    //* THEME PROVIDER FUNCTION
     const theme = createMuiTheme({
         color: "white",
         palette:{
@@ -64,6 +66,7 @@ function About(props) {
         axios.post('/email', body).then(res => {
             console.log(res.data)
         })
+        console.log(body)
     }
 
     function handleReset(){
@@ -155,7 +158,7 @@ function About(props) {
 
                 <div className='place'>
 
-                    <div>
+                    <div className='work-together-head'>
                         <h1>Lets Work Together!</h1>
                         <p>Send me an email with some details!</p>
                     </div>
