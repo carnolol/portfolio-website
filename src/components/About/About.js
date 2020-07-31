@@ -63,9 +63,10 @@ function About(props) {
             name: name,
             message: message
         }
-        axios.post('/email', body).then(res => {
+        axios.post('/mail', body).then(res => {
             console.log(res.data)
         })
+        handleReset()
         console.log(body)
     }
 
@@ -182,7 +183,7 @@ function About(props) {
                                 required={true}
                                 onChange={e => setName(e.target.value)}/>
                         </ThemeProvider>
-                        <ThemeProvider>
+                        <ThemeProvider theme={theme}>
                             <TextField
                              label="Message"
                              variant="outlined"
