@@ -63,11 +63,8 @@ function About(props) {
             name: name,
             message: message
         }
-        axios.post('/mail', body).then(res => {
-            console.log(res.data)
-        })
+        axios.post('/mail', body)
         handleReset()
-        console.log(body)
     }
 
     function handleReset(){
@@ -143,7 +140,7 @@ function About(props) {
                     <h1>Who am I?</h1>
                     <ul className='list-container'>
                         <li className='dad-list'>
-                            Father & loyal family-man
+                            A father & loyal family-man
                         </li>
                         <li className='dad-list'>
                             A level headed well versed problem solver
@@ -165,12 +162,12 @@ function About(props) {
                     </div>
 
                     <div className='work-together-inputs-container'>
-                        <input className='work-together-inputs'
+                        {/* <input className='work-together-inputs'
                             placeholder='Name'
                             onChange={(e) => setName(e.target.value)} />
                         <input className='work-together-inputs'
                             placeholder='Your Message'
-                            onChange={e => setMessage(e.target.value)} />
+                            onChange={e => setMessage(e.target.value)} /> */}
                         <ThemeProvider theme={theme}>
                             <TextField 
                                 id="outlined-basic" 
@@ -189,7 +186,8 @@ function About(props) {
                              variant="outlined"
                              size="small"
                              required="true"
-                             rows="20"
+                             multiline={true}
+                             rows="4"
                              value={message}
                              onChange={e => setMessage(e.target.value)}   />
                         </ThemeProvider>

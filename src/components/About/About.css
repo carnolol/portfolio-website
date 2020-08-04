@@ -124,7 +124,8 @@
     flex-direction: column;
     height: 200px;
     padding: 20px;
-    background-color: rgb(182, 182, 182);
+    /* background-color: rgb(182, 182, 182); */
+    background-color: white;
     justify-content: space-between;
 }
 
@@ -142,6 +143,8 @@
 
 .work-buttons-container{
     margin-top: 20px;
+    padding: 10px;
+    background-color: #0d5470;
     display: flex;
     justify-content: space-between;
     /* margin-top: 15px; */
