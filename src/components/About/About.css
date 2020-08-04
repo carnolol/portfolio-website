@@ -54,12 +54,11 @@
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 80%;
     /* border: 5px solid rebeccapurple; */
 }
 
 .dad-info {
-    border: 3px solid cornflowerblue;
     display: flex;
     width: 300px;
     height: 500px;
@@ -122,7 +121,7 @@
 .work-together-inputs-container{
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 300px;
     padding: 20px;
     /* background-color: rgb(182, 182, 182); */
     background-color: white;
@@ -144,6 +143,8 @@
 .work-buttons-container{
     margin-top: 20px;
     padding: 10px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px black;
     background-color: #0d5470;
     display: flex;
     justify-content: space-between;
@@ -154,7 +155,8 @@
     border: 2px solid white;
     background-color: transparent;
     color: white;
-    padding: 5px;
+    padding: 10px;
+    font-weight: bold;
 
 }
 

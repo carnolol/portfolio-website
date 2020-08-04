@@ -143,7 +143,7 @@ function About(props) {
                             A father & loyal family-man
                         </li>
                         <li className='dad-list'>
-                            A level headed well versed problem solver
+                            A level headed & mechanically inclined problem solver
                         </li>
                         <li className='dad-list'>
                             Someone who has great passion for building and designing
@@ -187,7 +187,7 @@ function About(props) {
                              size="small"
                              required="true"
                              multiline={true}
-                             rows="4"
+                             rows="5"
                              value={message}
                              onChange={e => setMessage(e.target.value)}   />
                         </ThemeProvider>
