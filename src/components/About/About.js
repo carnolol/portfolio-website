@@ -76,7 +76,7 @@ function About(props) {
         <div className='master-about-div'>
 
             <Grow timeout={1000} in={aboutGrow}>
-                <h1 className='about-h1'>About</h1>
+                <h1 className='about-header'>About</h1>
             </Grow>
 
             <div className='about-goals-container'>
@@ -139,6 +139,9 @@ function About(props) {
                         alt='dad and rowan' />
                     <h1>Who am I?</h1>
                     <ul className='list-container'>
+                        <li className='dad-list'>
+                           I will code for fun in my spare time
+                        </li>
                         <li className='dad-list'>
                             A father & loyal family-man
                         </li>

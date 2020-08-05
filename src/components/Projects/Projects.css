@@ -7,3 +7,16 @@
     flex-direction: column;
     align-items: center;
 }
+
+.project-picture{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+}
+
+.site-button{
+    color: crimson;
+    background-color: black;
+    border: 3px solid cornflowerblue;
+    padding: 10px;
+}

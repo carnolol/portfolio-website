@@ -5,6 +5,7 @@ const session = require('express-session')
 const path = require('path')
 const skillsCtrl = require('./skillsController')
 const mailCtrl = require('./mailController')
+const projectController = require("./projectController")
 const app = express()
 app.use(express.json())
 
@@ -27,6 +28,9 @@ app.get('/other', skillsCtrl.getOtherSkills)
 
 //* MAIL 
 app.post('/mail', mailCtrl.mail)
+
+//* PROJECTS
+app.get('/projects', projectController.projects)
 
 massive({
     connectionString: CONNECTION_STRING,
