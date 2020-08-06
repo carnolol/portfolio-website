@@ -59,6 +59,7 @@ function About(props) {
     }
 
     const handleSendEmail = () => {
+        alert('Your e-mail has been sent!')
         const body = {
             name: name,
             message: message
