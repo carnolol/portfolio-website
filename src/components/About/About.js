@@ -141,7 +141,7 @@ function About(props) {
                     <h1>Who am I?</h1>
                     <ul className='list-container'>
                         <li className='dad-list'>
-                           I will code for fun in my spare time
+                           I love to design & Engineer projects. There is nothing more rewarding than making something from scratch.
                         </li>
                         <li className='dad-list'>
                             A father & loyal family-man
@@ -153,7 +153,7 @@ function About(props) {
                             Someone who has great passion for building and designing
                         </li>
                         <li className='dad-list'>
-                            Obsessed with perfecting the small details
+                            Obsessed with perfecting the small details 
                         </li>
                     </ul>
                 </div>

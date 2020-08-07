@@ -9,6 +9,7 @@ function Projects(props) {
     const [projects, setProjects] = useState([])
     const [dota, setDota] = useState([])
     const [coda, setCoda] = useState([])
+    const [hover, setHover] = useState(false)
 
     useEffect(() => {
 
@@ -20,15 +21,19 @@ function Projects(props) {
         //TODO: Need to write backend endpoint to get pictures of dotapros & of coda-vida to display as a slider. 
     }, [])
 
+                //!         MAP HERE         //
     const allProjects = projects.map(project => {
 
         return (
-            <div className='project-picture-container'>
+            <div className='each-project' 
+                onMouseOver={() => setHover(true)}
+                onMouseOut={() => setHover(false)}>
                     <h1>{project.name}</h1>
                     <img className='project-picture'
                         src={project.img}
                         alt={`need new ${project.name} picture`} />
-                    <div>
+                    <p>{project.description}</p>
+                    <div className='site-links'>
                         <a className='site-button'
                             href={project.site_link}>
                             Visit Site
@@ -44,22 +49,10 @@ function Projects(props) {
         <div className='master-projects-div'>
 
             <h1 className='about-h1'>Projects</h1>
-            {allProjects}
-            {/* <div className='project-picture-container'>
-                <div>
-                    <img className='project-picture'
-                        src={dotaImg}
-                        alt='dota screen shot' />
-                    <div>
-                        <a className='site-button'
-                            href='https://followdotapros.com/'>
-                            Visit Site
-                        </a>
-                        <a className='site-button'
-                            href='https://github.com/carnolol/follow-the-dota-pros'>View Code</a>
-                    </div>
-                </div>
-            </div> */}
+
+            <div className='all-projects-container'>
+                {allProjects}
+            </div>
 
         </div>
     )
