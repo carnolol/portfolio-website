@@ -19,7 +19,7 @@ function About(props) {
     const [name, setName] = useState('')
     const [message, setMessage] = useState('')
 
-    // TODO: set up backend to work with nodemailer so we can receive emails from people who would like to contact us. 
+    // TODO: Add Sweet Alerts so when someone sends an email it looks better.
 
     useEffect(() => {
         window.addEventListener('scroll', handleGrow)
@@ -189,7 +189,7 @@ function About(props) {
                              label="Message"
                              variant="outlined"
                              size="small"
-                             required="true"
+                             required={true}
                              multiline={true}
                              rows="5"
                              value={message}

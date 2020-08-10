@@ -31,6 +31,7 @@ app.post('/mail', mailCtrl.mail)
 
 //* PROJECTS
 app.get('/projects', projectController.projects)
+app.get('/projects/pictures', projectController.projectPictures)
 
 massive({
     connectionString: CONNECTION_STRING,
