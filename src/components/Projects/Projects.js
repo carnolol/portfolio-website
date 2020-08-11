@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import './Projects.css'
 import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 import dotaImg from '../../Photos/Screen Shot 2020-08-05 at 10.43.28 AM.png'
 
 function Projects(props) {
@@ -27,17 +29,30 @@ function Projects(props) {
     }, [])
 
     const settings ={
-        dots: true, 
+        // className: "center",
+        // centerMode: true,
+        // infinite: true,
+        // centerPadding: "10px",
+        // slidesToShow: 1,
+        // slidesToScroll: 1,
+        // speed: 55500,
+        // dots: true,
+        // arrows: true,
+        // autoplay: false
+        dots: true,
+        fade: true, 
+        arrows: true,
+        infinite: true,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: false,
-        arrows: true
+        className: 'slides'
     }
 
     const carousel = projectPictures.map(screenShot => {
 
         return (
-            <div>
+            <div className='carousel-container'>
                 <img className='project-picture'
                     src={screenShot.image}/>
             </div>
