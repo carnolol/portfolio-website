@@ -1,5 +1,6 @@
 .master-projects-div{
-    background-color: #E9ECEF;
+    /* background-color: #E9ECEF; */
+    background-color: rgb(233, 231, 231);
     padding-bottom: 60px;
     width: 100vw;
     height: 950px;
@@ -8,7 +9,7 @@
     align-items: center;
 }
 
-.slides .slick-prev,
+/* .slides .slick-prev,
 .slides .slick-next {
   position: absolute;
   top: 50%;
@@ -33,17 +34,24 @@
 
 .slides .slick-next {
   right: 5%;
-}
+} */
 
 .carousel-container{
     position: relative;
+    width: 350px;
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
-    width: 500px;
-    height: 500px;
-    border: 15px solid blue;
+    padding-bottom: 20px;
+    /* border: 15px solid transparent; */
+}
+
+.carousel-picture{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
 }
 
 .all-projects-container{
@@ -56,19 +64,20 @@
 .each-project{
     height: 600px;
     width: 300px;
-    border: 3px solid cornflowerblue;
+    /* background-color: rgb(13,84,112, .5); */
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .project-picture{
-    border: 15px solid crimson;
-    height: 250px;
-    width: 250px;
-    object-fit: cover;
-    object-position: center top;
+    /* position: absolute; */
+    height: 300px;
+    width: 260px;
+    object-fit: contain;
+    /* object-position: center top; */
 }
 
 .site-links{
@@ -94,5 +103,8 @@
 
 
 .each-project > p{
-    width: 80%;
+    width: 85%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-weight: 400;
 }

@@ -28,11 +28,11 @@ function Projects(props) {
         //TODO: Need to write backend endpoint to get pictures of dotapros & of coda-vida to display as a slider. 
     }, [])
 
-    const settings ={
+    const settings = {
         // className: "center",
         // centerMode: true,
+        // centerPadding: "25px",
         // infinite: true,
-        // centerPadding: "10px",
         // slidesToShow: 1,
         // slidesToScroll: 1,
         // speed: 55500,
@@ -40,20 +40,18 @@ function Projects(props) {
         // arrows: true,
         // autoplay: false
         dots: true,
-        fade: true, 
         arrows: true,
         infinite: true,
-        speed: 1500,
+        speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1,
-        className: 'slides'
+        slidesToScroll: 1
     }
 
     const carousel = projectPictures.map(screenShot => {
 
         return (
             <div className='carousel-container'>
-                <img className='project-picture'
+                <img className='project-picture'   alt='need new screen shot'
                     src={screenShot.image}/>
             </div>
         )
@@ -67,9 +65,9 @@ function Projects(props) {
                 onMouseOver={() => setHover(true)}
                 onMouseOut={() => setHover(false)}>
                 <h1>{project.name}</h1>
-                <img className='project-picture'
-                    src={project.img}
-                    alt={`need new ${project.name} picture`} />
+                <Slider {...settings} style={{width: '90%'}}>
+                    {carousel}
+                </Slider>
                 <p>{project.description}</p>
                 <div className='site-links'>
                     <a className='site-button'
@@ -91,10 +89,10 @@ function Projects(props) {
             <div className='all-projects-container'>
                 {allProjects}
             </div>
-            
-            <Slider {...settings}>
+            {/* <Slider {...settings} style={{width: '45%'}}>
                 {carousel}
-            </Slider>
+            </Slider> */}
+           
 
         </div>
     )
