@@ -130,10 +130,6 @@ function Projects(props) {
             <div className='all-projects-container'>
                 {allProjects}
             </div>
-            {/* <Slider {...settings} style={{width: '45%'}}>
-                {carousel}
-            </Slider> */}
-
 
         </div>
     )

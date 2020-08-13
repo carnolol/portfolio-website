@@ -11,13 +11,13 @@ let transporter = nodemailer.createTransport({
 
 module.exports = {
     mail: async (req, res) => {
-        const {name, message} = req.body
+        const {name, company, message} = req.body
         // console.log('NAME:', name)
         // console.log('MESSAGE:', message)
         let mailOptions = {
             from: 'follow.your.dota.pros@gmail.com',
             to: 'michael.chadwick91@gmail.com',
-            subject: `${name} would like to work together!!`,
+            subject: `${name} from ${company} would like to work together!!`,
             text: message
         }
         

@@ -64,7 +64,7 @@
 .each-project{
     /* height: 600px; */
     width: 350px;
-    /* background-color: rgb(13,84,112, .5); */
+    box-shadow: 0 0 5px black;
    background: #0d5470;
     display: flex;
     justify-content: space-evenly;

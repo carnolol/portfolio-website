@@ -10,6 +10,7 @@ import TextField from '@material-ui/core/TextField'
 import cyan from '@material-ui/core/colors/cyan'
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles'
+import swal from 'sweetalert'
 import './About.css'
 
 function About(props) {
@@ -17,6 +18,7 @@ function About(props) {
     const [grow, setGrow] = useState(false)
     const [aboutGrow, setAboutGrow] = useState(false)
     const [name, setName] = useState('')
+    const [company, setCompany] = useState('')
     const [message, setMessage] = useState('')
 
     // TODO: Add Sweet Alerts so when someone sends an email it looks better.
@@ -59,11 +61,18 @@ function About(props) {
     }
 
     const handleSendEmail = () => {
-        alert('Your e-mail has been sent!')
+        // alert('Your e-mail has been sent!')
         const body = {
             name: name,
+            // company: company,
             message: message
         }
+        swal({
+            title: 'Success!',
+            text: 'Your E-mail has been sent!',
+            icon: 'success',
+            button: 'OK'
+        })
         axios.post('/mail', body)
         handleReset()
     }
@@ -166,12 +175,7 @@ function About(props) {
                     </div>
 
                     <div className='work-together-inputs-container'>
-                        {/* <input className='work-together-inputs'
-                            placeholder='Name'
-                            onChange={(e) => setName(e.target.value)} />
-                        <input className='work-together-inputs'
-                            placeholder='Your Message'
-                            onChange={e => setMessage(e.target.value)} /> */}
+
                         <ThemeProvider theme={theme}>
                             <TextField 
                                 id="outlined-basic" 
@@ -184,6 +188,7 @@ function About(props) {
                                 required={true}
                                 onChange={e => setName(e.target.value)}/>
                         </ThemeProvider>
+
                         <ThemeProvider theme={theme}>
                             <TextField
                              label="Message"
@@ -202,6 +207,7 @@ function About(props) {
                             <button className='work-buttons'
                                 onClick={() => handleSendEmail()}>Submit</button>
                         </div>
+
                     </div>
 
                 </div>
