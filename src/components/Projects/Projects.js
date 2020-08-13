@@ -7,6 +7,18 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import dotaImg from '../../Photos/Screen Shot 2020-08-05 at 10.43.28 AM.png'
 
+
+function Arrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className}
+            style={{ ...style, display: "block", color: 'black' }}
+            onClick={onClick}
+        />
+    );
+}
+
 function Projects(props) {
 
     const [projects, setProjects] = useState([])
@@ -40,34 +52,63 @@ function Projects(props) {
         // arrows: true,
         // autoplay: false
         dots: true,
+        centerPadding:'15px',
         arrows: true,
         infinite: true,
-        speed: 500,
+        swipeToSlide: true,
+        speed: 750,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        nextArrow: <Arrow />,
+        prevArrow: <Arrow />
     }
 
     const carousel = projectPictures.map(screenShot => {
 
-        return (
-            <div className='carousel-container'>
-                <img className='project-picture'   alt='need new screen shot'
-                    src={screenShot.image}/>
-            </div>
-        )
+        if (screenShot.project_id === 1) {
+            return (
+                <div className='carousel-container'>
+                    <img className='project-picture' alt='need new screen shot'
+                        src={screenShot.image} />
+                </div>
+            )
+        } else if (screenShot.project_id === 2) {
+
+        }
+
+        // return (
+        //     <div className='carousel-container'>
+        //         <img className='project-picture' alt='need new screen shot'
+        //             src={screenShot.image} />
+        //     </div>
+        // )
     })
-    
+
     //!         MAP HERE         //
     const allProjects = projects.map(project => {
+
+
+        // function handleSlideshow(){
+        //     if(project.project_id === 1){
+        //        return <Slider {...settings} style={{width: '90%'}}>
+        //             {carousel}
+        //         </Slider>
+        //     } else if (project.project_id === 2){
+
+        //     }
+        // }
 
         return (
             <div className='each-project'
                 onMouseOver={() => setHover(true)}
                 onMouseOut={() => setHover(false)}>
                 <h1>{project.name}</h1>
-                <Slider {...settings} style={{width: '90%'}}>
-                    {carousel}
-                </Slider>
+                {/* {handleSlideshow()} */}
+                <div className='slider-container'>
+                    <Slider {...settings} style={{ width: '80%' , padding: ' 0 0 20px'}}>
+                        {carousel}
+                    </Slider>
+                </div>
                 <p>{project.description}</p>
                 <div className='site-links'>
                     <a className='site-button'
@@ -92,7 +133,7 @@ function Projects(props) {
             {/* <Slider {...settings} style={{width: '45%'}}>
                 {carousel}
             </Slider> */}
-           
+
 
         </div>
     )
