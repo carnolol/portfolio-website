@@ -52,7 +52,7 @@ function Projects(props) {
         // arrows: true,
         // autoplay: false
         dots: true,
-        centerPadding:'15px',
+        centerPadding: '15px',
         arrows: true,
         infinite: true,
         swipeToSlide: true,
@@ -65,16 +65,22 @@ function Projects(props) {
 
     const carousel = projectPictures.map(screenShot => {
 
-        if (screenShot.project_id === 1) {
+        console.log('ID', screenShot.id)
+        if (screenShot.project_id === 1 && screenShot.name === 'Dota Pros') {
             return (
                 <div className='carousel-container'>
                     <img className='project-picture' alt='need new screen shot'
                         src={screenShot.image} />
                 </div>
-            )
-        } else if (screenShot.project_id === 2) {
-
-        }
+            )}
+        // } if (screenShot.project_id === 2 && screenShot.id > 11) {
+        //     return (
+        //     <div className='carousel-container'>
+        //         <img className='project-picture' alt='need new screen shot'
+        //             src={screenShot.image} />
+        //     </div>
+        //     )
+        // }
 
         // return (
         //     <div className='carousel-container'>
@@ -105,7 +111,7 @@ function Projects(props) {
                 <h1>{project.name}</h1>
                 {/* {handleSlideshow()} */}
                 <div className='slider-container'>
-                    <Slider {...settings} style={{ width: '80%' , padding: ' 0 0 20px'}}>
+                    <Slider {...settings} style={{ width: '80%', padding: ' 0 0 20px' }}>
                         {carousel}
                     </Slider>
                 </div>

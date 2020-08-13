@@ -133,7 +133,7 @@ function Landing(props) {
                     alt='me.jpg' />
                 <div className='my-work'
                     onClick={() => scrollToAbout()}>
-                    <p>View my work</p>
+                    <p>Learn more</p>
                     <img className='arrow'
                         src={arrow}
                         alt='arrow' />

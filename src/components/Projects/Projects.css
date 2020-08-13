@@ -76,9 +76,10 @@
 
 .each-project > h1{
     font-size: 200%;
-    text-shadow: 1px 1px 2px #04c2c9;
+    text-shadow: 2px 2px 2px black;
     margin-top: 15px;
     margin-bottom: 15px;
+    color: white;
     
 }
 
