@@ -5,7 +5,6 @@ import './Projects.css'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import dotaImg from '../../Photos/Screen Shot 2020-08-05 at 10.43.28 AM.png'
 
 
 function Arrow(props) {
@@ -41,16 +40,7 @@ function Projects(props) {
     }, [])
 
     const settings = {
-        // className: "center",
         // centerMode: true,
-        // centerPadding: "25px",
-        // infinite: true,
-        // slidesToShow: 1,
-        // slidesToScroll: 1,
-        // speed: 55500,
-        // dots: true,
-        // arrows: true,
-        // autoplay: false
         dots: true,
         centerPadding: '15px',
         arrows: true,
@@ -63,59 +53,50 @@ function Projects(props) {
         prevArrow: <Arrow />
     }
 
-    const carousel = projectPictures.map(screenShot => {
-
-        console.log('ID', screenShot.id)
+    const dotaCarousel = projectPictures.map(screenShot => {
         if (screenShot.project_id === 1 && screenShot.name === 'Dota Pros') {
             return (
                 <div className='carousel-container'>
                     <img className='project-picture' alt='need new screen shot'
                         src={screenShot.image} />
                 </div>
-            )}
-        // } if (screenShot.project_id === 2 && screenShot.id > 11) {
-        //     return (
-        //     <div className='carousel-container'>
-        //         <img className='project-picture' alt='need new screen shot'
-        //             src={screenShot.image} />
-        //     </div>
-        //     )
-        // }
+            )
+        }
+    })
 
-        // return (
-        //     <div className='carousel-container'>
-        //         <img className='project-picture' alt='need new screen shot'
-        //             src={screenShot.image} />
-        //     </div>
-        // )
+    const codaCarousel = projectPictures.map(screenShot => {
+
+        if (screenShot.project_id === 2 && screenShot.name === 'Coda-Vida') {
+            return (
+                <div className='carousel-container'>
+                    <img className='project-picture' alt='need new screen shot'
+                        src={screenShot.image} />
+                </div>
+            )
+        }
     })
 
     //!         MAP HERE         //
     const allProjects = projects.map(project => {
 
-
-        // function handleSlideshow(){
-        //     if(project.project_id === 1){
-        //        return <Slider {...settings} style={{width: '90%'}}>
-        //             {carousel}
-        //         </Slider>
-        //     } else if (project.project_id === 2){
-
-        //     }
-        // }
-
         return (
             <div className='each-project'
                 onMouseOver={() => setHover(true)}
                 onMouseOut={() => setHover(false)}>
+
                 <h1>{project.name}</h1>
-                {/* {handleSlideshow()} */}
+                
                 <div className='slider-container'>
-                    <Slider {...settings} style={{ width: '80%', padding: ' 0 0 20px' }}>
-                        {carousel}
-                    </Slider>
+                    {/* Ternary that handles displaying the correct slides  */}
+                    {project.name === 'Coda-Vida' ? <Slider {...settings} style={{ width: '80%', padding: ' 0 0 20px' }}>
+                        {codaCarousel}
+                    </Slider> : project.name === 'Dota Pros' ? <Slider {...settings} style={{width: '80%', padding: '0 0 20px'}}>
+                        {dotaCarousel}
+                    </Slider> : null}
                 </div>
+
                 <p>{project.description}</p>
+
                 <div className='site-links'>
                     <a className='site-button'
                         href={project.site_link}>
@@ -124,6 +105,7 @@ function Projects(props) {
                     <a className='site-button'
                         href={project.site_code}>View Code</a>
                 </div>
+
             </div>
         )
     })
