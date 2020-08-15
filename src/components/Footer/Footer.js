@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-function Footer (props){
+function Footer(props) {
 
-    return(
-        <div>
-            My Footer
-        </div>
-    )
+        return (
+            <div>
+                FOOTER.JS
+            </div>
+        )
+    
 }
 
 export default Footer

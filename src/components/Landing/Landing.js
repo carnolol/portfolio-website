@@ -7,7 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Slide from '@material-ui/core/Slide';
 import { withRouter } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
-import photo from '../../Photos/Headshot.png'
+import photo from '../../Photos/headshot.jpg'
 import arrow from '../../Photos/icons8-right-arrow-50.png'
 import "./Landing.css";
 
