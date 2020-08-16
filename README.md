@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A website created as an online resume to showcase my projects, and demonstrate my skills as a developer. Made using Material UI for the front-end. (https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
