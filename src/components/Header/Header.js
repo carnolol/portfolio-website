@@ -132,7 +132,7 @@ function Header(props) {
                     <li className='nav-item2'
                         onClick={() => scrollToAbout()}>About</li>
                     <l1 className='nav-item2'
-                        onClick={() => scrollToContact()}>Contact</l1>
+                        onClick={() => scrollToContact()}>Contact me</l1>
                     <l1 className='nav-item2'
                         onClick={() => scrollToProjects()}>Projects</l1>
                 </ul>
