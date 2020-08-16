@@ -5,8 +5,12 @@
     align-items: center;
     width: 100%;
     min-height: 50px;
-    height: 100px;
     background-color: #1b242f;
+}
+
+.master-footer-div>h4{
+    padding-top: 15px;
+    color: white;
 }
 
 .logo-container {
@@ -32,13 +36,8 @@
 
 }
 
-/* .logo-links:nth-child(2){
-    background: white;
-    border-radius: 50%;
-    padding: 2px;
-} */
-
 .master-footer-div>p {
     color: white;
+    padding-bottom: 15px;
     font-size: 50%;
 }

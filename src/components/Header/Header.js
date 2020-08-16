@@ -42,7 +42,7 @@ function Header(props) {
             setAbout(true)
         } else {
             setAbout(false)
-        } if(window.scrollY >= 2750) {
+        } if (window.scrollY >= 2750) {
             setProjects(true)
         } else {
             setProjects(false)
@@ -86,7 +86,7 @@ function Header(props) {
 
     function scrollToProjects() {
         window.scrollTo({
-            top: 2750,
+            top: 2570,
             left: 0,
             behavior: 'smooth'
         })
@@ -95,7 +95,7 @@ function Header(props) {
 
     function scrollToContact() {
         window.scrollTo({
-            top: 600,
+            top: 1960,
             left: 0,
             behavior: 'smooth'
         })
@@ -106,18 +106,19 @@ function Header(props) {
         <div className='master-header-div'>
             <nav className='navbar'>
                 <ul className='nav-list'>
-                    <l1 
+                    <l1
                         className={`nav-item ${home ? 'current-skill' : null}`}
                         onClick={() => scrollTop()}>Home</l1>
-                    <l1 
+                    <l1
                         className={`nav-item ${skills ? 'current-skill' : null}`}
                         onClick={() => scrollToSkills()}>Skills</l1>
-                    <li 
+                    <li
                         className={`nav-item ${about ? 'current-skill' : null}`}
                         onClick={() => scrollToAbout()}>About</li>
+                    <l1 className='nav-item'
+                        onClick={() => scrollToContact()}>Contact</l1>
                     <l1 className={`nav-item ${projects ? 'current-skill' : null}`}
                         onClick={() => scrollToProjects()}>Projects</l1>
-                    <l1 className='nav-item'>Contact</l1>
                 </ul>
                 <img className='hamburger'
                     src={hamburger}
@@ -131,8 +132,9 @@ function Header(props) {
                     <li className='nav-item2'
                         onClick={() => scrollToAbout()}>About</li>
                     <l1 className='nav-item2'
+                        onClick={() => scrollToContact()}>Contact</l1>
+                    <l1 className='nav-item2'
                         onClick={() => scrollToProjects()}>Projects</l1>
-                    <l1 className='nav-item2'>Contact</l1>
                 </ul>
             </nav>
         </div>
