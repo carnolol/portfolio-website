@@ -41,7 +41,6 @@ function Projects(props) {
 
     const settings = {
         // centerMode: true,
-        dots: true,
         centerPadding: '15px',
         arrows: true,
         infinite: true,
@@ -85,7 +84,7 @@ function Projects(props) {
                 onMouseOut={() => setHover(false)}>
 
                 <h1>{project.name}</h1>
-                
+
                 <div className='slider-container'>
                     {/* Ternary that handles displaying the correct slides  */}
                     {project.name === 'Coda-Vida' ? <Slider {...settings} style={{ width: '80%', padding: ' 0 0 20px' }}>

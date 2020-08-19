@@ -43,7 +43,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
     /* border: 15px solid transparent; */
 }
 
@@ -126,7 +125,24 @@
     font-size: 110%;
     text-shadow: 1px 1px 2px black;
     width: 85%;
-    margin-top: 45px;
     padding-bottom: 25px;
     font-weight: 400;
+}
+
+@media(max-width: 800px){
+    .all-projects-container{
+        width: 70%;
+    }
+    .project-picture{
+        height: 200px;
+    }
+    .each-project{
+        width: 250px;
+    }
+    .each-project > p{
+        font-size: 75%;
+    }
+    .slider-container{
+        width: 80%;
+    }
 }

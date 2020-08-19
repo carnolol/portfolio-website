@@ -37,7 +37,8 @@
 }
 
 .about-goals {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
+    background-color: #56ffe3;
     display: flex;
     box-shadow: 2px 2px 6px black;
     flex-direction: column;
@@ -50,12 +51,13 @@
 
 .goal-logo{
     font-size: 120%;
-    text-shadow: 1px 1px 5px white;
+    text-shadow: 1px 1px 0px white;
     color: #023852;
 }
 
 .goal-text {
     width: 85%;
+    text-shadow: 1px 1px 0 white;
 }
 
 .dad-container {
@@ -173,4 +175,26 @@
     border: 2px solid #04c2c9;
     background-color: #04c2c9;
     transition: all .35s ease-in-out;
+}
+
+@media(max-width: 1600px){
+    .about-goals{
+        height: 220px;
+        width: 180px;
+    }
+    .work-together-inputs-container{
+        width: 80%;
+    }
+    .goal-text{
+        font-size: 80%;
+    }
+    .dad-container{
+        width: 90%;
+    }
+    .place{
+        width: 400px;
+    }
+    .work-together-head > p{
+        font-size: 125%;
+    }
 }
