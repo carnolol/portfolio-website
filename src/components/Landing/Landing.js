@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import "slick-carousel/slick/slick.css"
-// import "slick-carousel/slick/slick-theme.css"
-// import Slider from "react-slick";
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Slide from '@material-ui/core/Slide';
 import { withRouter } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,8 +7,6 @@ import photo from '../../Photos/headshot.jpg'
 import arrow from '../../Photos/icons8-right-arrow-50.png'
 import "./Landing.css";
 
-const hero =
-    "https://i.pinimg.com/originals/1e/3e/9e/1e3e9ebab9ae9154a33fefcf937d2796.jpg";
 
 function Landing(props) {
     const [slideLeft, setSlideLeft] = useState(false)

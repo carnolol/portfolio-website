@@ -189,7 +189,7 @@
         font-size: 80%;
     }
     .dad-container{
-        width: 90%;
+        width: 60%;
     }
     .place{
         width: 400px;
@@ -197,4 +197,28 @@
     .work-together-head > p{
         font-size: 125%;
     }
+    .master-about-div{
+        min-height: 1000px;
+    }
 }
+
+@media(max-width: 1100px){
+    .about-goals{
+        width: 150px;
+    }
+    .goal-logo{
+        font-size: 100%;
+    }
+    .goal-text{
+        font-size: 70%;
+    }
+    .goal-img{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media(max-width: 800px){
+    
+}
+

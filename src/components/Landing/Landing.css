@@ -176,3 +176,12 @@
         height: 75px;
     }
 }
+
+@media(max-width: 1000px){
+    .skill-container{
+        width: 90px;
+    }
+    .skill-container > h1 {
+        font-size: 100%;
+    }
+}
