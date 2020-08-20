@@ -6,6 +6,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
+// TODO: need to change DB string on helo, take screen shots & add to projects list.
 
 function Arrow(props) {
     const { className, style, onClick } = props;
@@ -36,7 +37,6 @@ function Projects(props) {
                         setProjectPictures(res.data)
                     })
             })
-        //TODO: Need to write backend endpoint to get pictures of dotapros & of coda-vida to display as a slider. 
     }, [])
 
     const settings = {

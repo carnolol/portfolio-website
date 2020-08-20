@@ -2,7 +2,10 @@ const nodemailer = require('nodemailer')
 require('dotenv').config()
 
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    // host: 'smtp.yahoo.com',
+    // port: 465,
+    // service: 'yahoo',
+    // secure: false,
     host: 'smtp.gmail.com', 
     port: 587,
     requireTLS: true,
@@ -28,7 +31,7 @@ module.exports = {
             if(err){
                 console.log('NODEMAILER ERROR:', err)
             } else {
-                console.log('Email Sent!')
+                console.log('Email Sent!' + data.response)
             }
         })
         res.status(200).send(mailOptions)
