@@ -202,9 +202,18 @@
     }
 }
 
+@media(max-width: 1300px){
+    .dad-container{
+        width: 70%;
+    }
+}
+
 @media(max-width: 1100px){
     .about-goals{
         width: 150px;
+    }
+    .dad-container{
+        width: 85%;
     }
     .goal-logo{
         font-size: 100%;
@@ -219,6 +228,41 @@
 }
 
 @media(max-width: 800px){
-    
+    .dad-container{
+        width: 90%;
+    }
+    .about-goals-container{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .about-goals{
+        width: 21%;
+    }
+    .goal-logo{
+        font-size: 125%;
+    }
+    .goal-text{
+        font-size: 80%;
+        width: 90%;
+    }
+}
+
+@media(max-width: 700px){
+    .place{
+        width: 325px;
+    }
+    .goal-img{
+        /* height: 25px;
+        width: 25px; */
+    }
+    .goal-logo{
+        font-size: 85%;
+    }
+    .dad-container{
+        width: 95%;
+    }
+    .work-together-head > p {
+        font-size: 100%;
+    }
 }
 

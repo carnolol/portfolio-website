@@ -87,9 +87,9 @@ function Projects(props) {
 
                 <div className='slider-container'>
                     {/* Ternary that handles displaying the correct slides  */}
-                    {project.name === 'Coda-Vida' ? <Slider {...settings} style={{ width: '80%', padding: ' 0 0 20px' }}>
+                    {project.name === 'Coda-Vida' ? <Slider {...settings} style={{ width: '85%', padding: '0 0 20px' }}>
                         {codaCarousel}
-                    </Slider> : project.name === 'Dota Pros' ? <Slider {...settings} style={{width: '80%', padding: '0 0 20px'}}>
+                    </Slider> : project.name === 'Dota Pros' ? <Slider {...settings} style={{width: '85%', padding: '0 0 20px'}}>
                         {dotaCarousel}
                     </Slider> : null}
                 </div>
