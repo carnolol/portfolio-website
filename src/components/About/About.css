@@ -265,7 +265,7 @@ text-shadow: 1px 1px 2px #0d5470;
 
     @media(max-width: 600px){
         .master-about-div{
-            height: 1650px;
+            height: 1875px;
         }
         .dad-container{
 
@@ -287,3 +287,22 @@ text-shadow: 1px 1px 2px #0d5470;
     }
 }
 
+@media(max-width: 500px){
+    .about-goals-container{
+        flex-wrap: wrap;
+    }
+    .about-goals{
+        width: 45%;
+        margin-top:25px;
+    }
+    .dad-info{
+        margin-top: -50px;
+        height: 700px;
+    }
+    .place{
+        width: 100%;
+    }
+    .work-together-head{
+        font-size: 130%;
+    }
+}

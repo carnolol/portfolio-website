@@ -48,10 +48,11 @@
     font-size: 250%;
     top: 200px;
     text-shadow: 1px 1px 2px black;
-    left: 300px;
+    /* left: 300px; */
 }
 
 .hero-text > h1{
+    display: flex;
     font-size: 1.3rem;
   padding-top: 10px ;
 }
@@ -209,8 +210,11 @@
         /* height: 300px; */
         /* align-items: flex-start; */
     }
+    .hero-text{
+        width: 90vw;
+    }
     .hero-text > h1{
-        font-size: 55%;
+        font-size: 45%;
     }
     .skill-container{
         width: 70px;
@@ -225,6 +229,10 @@
 }
 
 @media(max-width:500px){
+    .hero-text{
+        font-size: 200%;
+        margin: 0;
+    }
     .skill-container{
         width: 60px;
     }
@@ -249,5 +257,37 @@
     }
     .skill-container >h1 {
         font-size: 70%;
+    }
+}
+
+@media(max-width: 400px){
+    .skill-container{
+        width: 45px;
+    }
+    .skill-container > h1{
+        font-size: 60%;
+    }
+    .skill-img{
+        /* height: 45px;
+        width: 45px; */
+    }
+}
+
+@media(max-width: 375px){
+    .hero-text{
+        font-size: 175%;
+    }
+}
+
+@media(max-width: 350px){
+    .hero-text{
+        font-size: 150%;
+    }
+    .skill-img{
+        height: 45px;
+        width: 45px;
+    }
+    .skill-container{
+        width: 40px;
     }
 }
