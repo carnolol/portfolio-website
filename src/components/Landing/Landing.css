@@ -16,7 +16,7 @@
     background-image: url(https://wallpaperaccess.com/full/1223755.jpg);
     justify-content: center;
     align-items: center;
-    background-position: center;
+    background-position: center top;
     background-size: cover;
 }
 
@@ -183,5 +183,71 @@
     }
     .skill-container > h1 {
         font-size: 100%;
+    }
+}
+
+@media(max-width: 800px){
+    .profile-pic{
+        left: 30px;
+        top: 50px;
+        height: 110px;
+        width: 110px;
+    }
+}
+
+@media(max-width: 700px){
+    .skill-container{
+        width: 75px;
+    }
+    .skill-container >h1 {
+        font-size: 90%;
+    }
+}
+
+@media(max-width: 600px){
+    .master-skill-container{
+        /* height: 300px; */
+        /* align-items: flex-start; */
+    }
+    .hero-text > h1{
+        font-size: 55%;
+    }
+    .skill-container{
+        width: 70px;
+    }
+    .skill-img{
+        height: 75px;
+        width: 75px;
+    }
+    .skill-container >h1 {
+        font-size: 80%;
+    }
+}
+
+@media(max-width:500px){
+    .skill-container{
+        width: 60px;
+    }
+    .skill-img{
+        height: 70px;
+        width: 70px;
+    }
+}
+
+@media(max-width: 450px){
+    .master-skill-container{
+        width: 98vw;
+        height: 200px;
+    }
+    .skill-container{
+        width: 55px;
+        height: 100px;
+    }
+    .skill-img{
+        height: 55px;
+        width: 55px;
+    }
+    .skill-container >h1 {
+        font-size: 70%;
     }
 }

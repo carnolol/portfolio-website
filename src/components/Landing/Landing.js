@@ -114,6 +114,7 @@ function Landing(props) {
         <div className='landing-master-div'>
 
             <div className='hero-image-container'>
+
                 <div className='hero-text'>
                     <div className='hero-text-name'>
                         <h1>Hi, I'm </h1>
@@ -122,9 +123,11 @@ function Landing(props) {
                     </div>
                     <h1>I'm a full-stack web developer who's in love with React</h1>
                 </div>
+
                 <img className='profile-pic'
                     src={photo}
                     alt='me.jpg' />
+                    
                 <div className='my-work'
                     onClick={() => scrollToAbout()}>
                     <p>Learn more</p>
@@ -132,6 +135,7 @@ function Landing(props) {
                         src={arrow}
                         alt='arrow' />
                 </div>
+
             </div>
 
             <div className='about-div'>
