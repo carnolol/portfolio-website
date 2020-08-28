@@ -6,6 +6,7 @@ let transporter = nodemailer.createTransport({
     // port: 465,
     // service: 'yahoo',
     // secure: false,
+    service: 'gmail',
     host: 'smtp.gmail.com', 
     port: 587,
     requireTLS: true,
@@ -17,14 +18,14 @@ let transporter = nodemailer.createTransport({
 
 module.exports = {
     mail: async (req, res) => {
-        const {name, company, message} = req.body
+        const {name, message} = req.body
         // console.log('NAME:', name)
         // console.log('MESSAGE:', message)
         let mailOptions = {
             from: 'follow.your.dota.pros@gmail.com',
             to: 'michael.chadwick91@gmail.com',
-            subject: `${name} from ${company} would like to work together!!`,
-            text: message
+            subject: `${name} would like to work together!!`,
+            text: `${name}'s message to you: ${message}`
         }
         
         transporter.sendMail(mailOptions, function(err, data) {

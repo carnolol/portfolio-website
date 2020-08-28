@@ -118,10 +118,12 @@ function Header(props) {
                         className={`nav-item ${projects ? 'current-skill' : null}`}
                         onClick={() => scrollToProjects()}>Projects</l1>
                 </ul>
+                
                 <img className='hamburger'
                     src={hamburger}
                     onClick={() => setOpen(!open)}
                     alt='hamburger menu' />
+
                 <ul className={`mobile-nav-list ${open ? `mobile-nav-list-open` : null}`}>
                     <l1 className='nav-item2'
                         onClick={() => scrollTop()}>Home</l1>
