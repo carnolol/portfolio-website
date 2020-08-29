@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Footer.css'
 import inLogo from '../icons/icons8-linkedin-2-64.png'
 import gitHub from '../icons/icons8-github-60.png'

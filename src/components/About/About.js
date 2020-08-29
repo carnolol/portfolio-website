@@ -9,7 +9,7 @@ import { Grow } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 import cyan from '@material-ui/core/colors/cyan'
 import { ThemeProvider } from '@material-ui/styles';
-import { createMuiTheme, makeStyles } from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
 import swal from 'sweetalert'
 import './About.css'
 
@@ -20,8 +20,6 @@ function About(props) {
     const [name, setName] = useState('')
     const [company, setCompany] = useState('')
     const [message, setMessage] = useState('')
-
-    // TODO: Add Sweet Alerts so when someone sends an email it looks better.
 
     useEffect(() => {
         window.addEventListener('scroll', handleGrow)
@@ -49,7 +47,7 @@ function About(props) {
     // });
 
     function handleGrow() {
-        console.log(window.scrollY)
+        // console.log(window.scrollY)
         if (window.scrollY > 1250) {
             setGrow(true)
         } if (window.scrollY > 1050){
@@ -61,7 +59,6 @@ function About(props) {
     }
 
     const handleSendEmail = () => {
-        // alert('Your e-mail has been sent!')
         const body = {
             name: name,
             // company: company,
@@ -135,7 +132,7 @@ function About(props) {
                                 alt='water icon' />
                         </div>
                         <h3 className='goal-logo'>Satisfaction</h3>
-                        <p className='goal-text'>I aim to please, Making sure all design & functionality elements are complete</p>
+                        <p className='goal-text'>I aim to please, Making sure all design & functionality elements are perfected and bug free.</p>
                     </div>
                 </Grow>
 
@@ -148,7 +145,10 @@ function About(props) {
                         src={dad}
                         alt='dad and rowan' />
                     <h1>Who am I?</h1>
-                    <ul className='list-container'>
+                    <div className='list-container'>
+                        {/* <p className='dad-list'>
+                            I'm Mike! I have always had a passion for computers, problem solving, and technology. After working in the insurance industry for 5 years I decided to make a change, I dove head first into the programming industry to pursue a career I knew I would look forward do doing each day. Over the last year I have fallen in love with this field, to me there is nothing more rewarding than learning something new, or solving a problem that has been bugging you for days.
+                        </p> */}
                         <li className='dad-list'>
                            I love to design & Engineer projects. There is nothing more rewarding than making something from scratch.
                         </li>
@@ -159,12 +159,12 @@ function About(props) {
                             A level headed & mechanically inclined problem solver
                         </li>
                         <li className='dad-list'>
-                            Someone who has great passion for building and designing
+                            Someone who has great passion for building and engineering
                         </li>
                         <li className='dad-list'>
                             Obsessed with perfecting the small details 
                         </li>
-                    </ul>
+                    </div>
                 </div>
 
                 <div className='place'>

@@ -8,12 +8,12 @@ import Projects from './components/Projects/Projects'
 import './App.css';
 
 function App() {
-  console.log(document.body.scrollTop)
-  console.log(window.height)
+  // console.log(document.body.scrollTop)
+  // console.log(window.height)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
-    console.log(window.scrollY)
+    // console.log(window.scrollY)
   }, [])
 
   function handleScroll() {

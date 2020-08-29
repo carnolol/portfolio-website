@@ -27,7 +27,7 @@ function Header(props) {
         }
     }
 
-    console.log(window.screen)
+    // console.log(window.screen)
 
     function checkSkills() {
         if (window.scrollY >= 600 && window.scrollY < 1550) {
@@ -42,11 +42,11 @@ function Header(props) {
             setAbout(true)
         } else {
             setAbout(false)
-        } if (window.scrollY >= 1960 && window.scrollY <2750){
+        } if (window.scrollY >= 1960 && window.scrollY < 2750) {
             setContact(true)
         } else {
             setContact(false)
-        }if (window.scrollY >= 2750) {
+        } if (window.scrollY >= 2750) {
             setProjects(true)
         } else {
             setProjects(false)
@@ -80,21 +80,44 @@ function Header(props) {
         setOpen(false)
     }
 
+
+    function scrollToContact() {
+        if (window.screen.availWidth > 600) {
+            window.scrollTo({
+                top: 1960,
+                left: 0,
+                behavior: 'smooth'
+            })
+        } else if (window.screen.availWidth <= 600 && window.screen.availWidth > 500) {
+            window.scrollTo({
+                top: 2725,
+                left: 0,
+                behavior: 'smooth'
+            })
+        } else if (window.screen.availWidth <= 500) {
+            window.scrollTo({
+                top: 2800,
+                left: 0,
+                behavior: 'smooth'
+            })
+        }
+        setOpen(false)
+    }
+
     function scrollToProjects() {
+       if(window.screen.availWidth > 600){
         window.scrollTo({
             top: 2570,
             left: 0,
             behavior: 'smooth'
         })
-        setOpen(false)
-    }
-
-    function scrollToContact() {
-        window.scrollTo({
-            top: 1960,
-            left: 0,
-            behavior: 'smooth'
-        })
+       } else if (window.screen.availWidth <= 600){
+           window.scrollTo({
+               top: 3470,
+               left: 0,
+               behavior: 'smooth'
+           })
+       }
         setOpen(false)
     }
 
@@ -111,14 +134,14 @@ function Header(props) {
                     <li
                         className={`nav-item ${about ? 'current-skill' : null}`}
                         onClick={() => scrollToAbout()}>About</li>
-                    <l1 
+                    <l1
                         className={`nav-item ${contact ? 'current-skill' : null}`}
                         onClick={() => scrollToContact()}>Contact</l1>
-                    <l1 
+                    <l1
                         className={`nav-item ${projects ? 'current-skill' : null}`}
                         onClick={() => scrollToProjects()}>Projects</l1>
                 </ul>
-                
+
                 <img className='hamburger'
                     src={hamburger}
                     onClick={() => setOpen(!open)}
