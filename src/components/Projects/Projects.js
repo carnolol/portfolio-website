@@ -68,7 +68,8 @@ function Projects(props) {
         if (screenShot.project_id === 2 && screenShot.name === 'Coda-Vida') {
             return (
                 <div className='carousel-container'>
-                    <img className='project-picture' alt='need new screen shot'
+                    <img className='project-picture' 
+                        alt='need new screen shot'
                         src={screenShot.image} />
                 </div>
             )
@@ -98,10 +99,12 @@ function Projects(props) {
 
                 <div className='site-links'>
                     <a className='site-button'
+                        target='_blank'
                         href={project.site_link}>
                         Visit Site
                         </a>
                     <a className='site-button'
+                        target='_blank'
                         href={project.site_code}>View Code</a>
                 </div>
 

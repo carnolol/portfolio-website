@@ -2,14 +2,7 @@ const nodemailer = require('nodemailer')
 require('dotenv').config()
 
 let transporter = nodemailer.createTransport({
-    // host: 'smtp.yahoo.com',
-    // port: 465,
-    // service: 'yahoo',
-    // secure: false,
-    service: 'gmail',
-    host: 'smtp.gmail.com', 
-    port: 587,
-    requireTLS: true,
+    service: 'hotmail',
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD
@@ -22,7 +15,7 @@ module.exports = {
         // console.log('NAME:', name)
         // console.log('MESSAGE:', message)
         let mailOptions = {
-            from: 'follow.your.dota.pros@gmail.com',
+            from: 'michael-and-claire@outlook.com',
             to: 'michael.chadwick91@gmail.com',
             subject: `${name} would like to work together!!`,
             text: `${name}'s message to you: ${message}`
