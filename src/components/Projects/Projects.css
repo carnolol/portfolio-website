@@ -128,9 +128,14 @@
     padding-bottom: 25px;
     font-weight: 400;
 }
-
+@media(min-width: 801px){
+    .each-project{
+        width: 30%;
+    }
+}
 @media(max-width: 800px){
     .all-projects-container{
+        flex-wrap: wrap;
         width: 95%;
     }
     .project-picture{
