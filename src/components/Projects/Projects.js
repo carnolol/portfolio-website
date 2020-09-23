@@ -56,7 +56,8 @@ function Projects(props) {
         if (screenShot.project_id === 1 && screenShot.name === 'Dota Pros') {
             return (
                 <div className='carousel-container'>
-                    <img className='project-picture' alt='need new screen shot'
+                    <img className='project-picture' 
+                        alt='need new screen shot'
                         src={screenShot.image} />
                 </div>
             )
@@ -66,6 +67,20 @@ function Projects(props) {
     const codaCarousel = projectPictures.map(screenShot => {
 
         if (screenShot.project_id === 2 && screenShot.name === 'Coda-Vida') {
+            return (
+                <div className='carousel-container'>
+                    <img className='project-picture' 
+                        alt='need new screen shot'
+                        src={screenShot.image} />
+                </div>
+            )
+        }
+    })
+
+    const weddingCarousel = projectPictures.map(screenShot => {
+
+        if(screenShot.project_id === 3 && screenShot.name === "The Chadwick's"){
+            console.log(screenShot.name, screenShot.image)
             return (
                 <div className='carousel-container'>
                     <img className='project-picture' 
@@ -92,6 +107,8 @@ function Projects(props) {
                         {codaCarousel}
                     </Slider> : project.name === 'Dota Pros' ? <Slider {...settings} style={{width: '85%', padding: '0 0 20px'}}>
                         {dotaCarousel}
+                    </Slider> : project.id === 3 ? <Slider {...settings} style={{width: '85%', padding: '0 0 20px'}}> 
+                        {weddingCarousel}
                     </Slider> : null}
                 </div>
 
@@ -120,7 +137,6 @@ function Projects(props) {
             <div className='all-projects-container'>
                 {allProjects}
             </div>
-
         </div>
     )
 }
